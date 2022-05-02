@@ -38,10 +38,16 @@ def main():
 def is_valid(plate):
     check_plate = []
     check_plate[:] = plate
+
+    #If the input is less than 2 or greater than 6 it is rejected
     if len(plate) < 2 or len(plate) > 6 or plate.isalnum() == False:
         return False
+
+    #If the input is all alphabetic characters it is accepted
     if plate[0:].isalpha():
         return True
+    if plate[0:2].isalpha() == False:
+        return False
     i = 2
     first_num = 0
     while i < len(plate):
