@@ -19,9 +19,15 @@ def strip():
     tweet = []
     result = []
     tweet[:] = input("Input: ")
+
+    #Loops through each letter in the Tweet
     for i in tweet:
+
+        #If the letter is not in the vowels list it is added to the end of the result list
         if i not in vowels:
             result.append(i)
+
+    #When the loop is done result is converted from a list to a string
     result = "".join(result)
     print(result)
 
