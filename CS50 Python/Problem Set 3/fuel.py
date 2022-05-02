@@ -29,20 +29,31 @@ def main():
 
 
 def guage():
-    print("Stuff")
     userinput = input("Fraction: ")
+
+    #This checks for expected format of ##/##
     if userinput.find("/") == False:
         return guage()
+
+    #This makes sure user isn't inputting multiple forward slashes
     if userinput.find("/") != userinput.rfind("/"):
         return guage()
+
+    #This tries to assign the value before the split to numerator and the value after the split to the denominator
     try:
         numerator, denominator = userinput.split("/")
     except ValueError:
         guage()
+    
+    #This ensures the numerator and denominator are numbers
     if numerator.isdigit() == False or denominator.isdigit() == False:
         return guage()
+
+    #This ensures the numerator is always larger than the denominator and that the denominator isn't 0 or less
     elif int(numerator) > int(denominator) or int(denominator) <= 0:
             return guage()
+
+    #The below section just gets the percentage and sets the output formatting
     percent = int(numerator) / int(denominator) * 100
     percent = round(percent)
     if int(percent) <= 1:
