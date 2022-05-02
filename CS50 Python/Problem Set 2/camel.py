@@ -22,6 +22,8 @@ def main():
 def camel():
     variableName = input("What is your variable name? ")
     snake_case = ""
+
+    #Loops through each letter in the variable and checks for uppercase letters, if it finds them an underscore is added and the letter is converted to lowercase
     for i in variableName:
         if i.isupper():
             snake_case = snake_case + "_" + i.lower()
